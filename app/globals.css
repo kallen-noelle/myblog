@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+@import "tailwindcss";
+
+/* 暗黑模式变体 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 禁用 SVG 点击焦点框 */
+svg, svg *, path, rect, .recharts-wrapper, .recharts-wrapper * {
+  outline: none !important;
+  outline-offset: 0 !important;
+}
+svg:focus, svg *:focus, path:focus, rect:focus,
+svg:focus-visible, svg *:focus-visible, path:focus-visible, rect:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* 基础环境与性能优化 */
+@layer base {
+  :root {
+    --font-serif: var(--font-serif), "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", serif;
+    --font-geist-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    --font-geist-mono: "JetBrains Mono", "Fira Code", Consolas, "Courier New", monospace;
+  }
+
+  body {
+    font-family: var(--font-serif);
+    @apply transition-colors duration-1000 text-slate-900 bg-slate-50;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .dark body {
+    @apply text-slate-100 bg-slate-950;
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+
+  [class*="backdrop-blur-"] {
+    will-change: backdrop-filter;
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .group:hover img {
+    will-change: transform;
+  }
+}
+
+/* 火狐专项优化与布局兜底 */
+@layer base {
+  @-moz-document url-prefix() {
+    [class*="backdrop-blur-md"] {
+      backdrop-filter: blur(8px) !important;
+    }
+  }
+
+  html, body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* 全局滚动条美化 (Chrome, Edge, Safari) */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.3);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.8);
+}
+
+/* Firefox 兼容 */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(99, 102, 241, 0.3) transparent;
+}
+
+/* 全屏模式：body 的 overflow-y-scroll 会导致滚动条样式丢失 */
+:fullscreen body,
+:-webkit-full-screen body {
+  overflow-y: auto !important;
+}
+
+/* 毛玻璃卡片工具类 */
+@layer components {
+  .glass-card {
+    @apply rounded-3xl bg-white/40 dark:bg-slate-800/50 backdrop-blur-md border border-white/40 dark:border-white/10 shadow-xl transition-[transform,background-color,border-color] duration-700;
+  }
+  .glass-card:hover {
+    @apply bg-white/50 dark:bg-slate-700/50 scale-[1.01];
+  }
+  .glass-btn {
+    @apply rounded-xl bg-white/40 dark:bg-slate-800/50 backdrop-blur-md border border-white/40 dark:border-white/10 shadow-sm transition-all duration-300;
+  }
+  .glass-btn:hover {
+    @apply bg-white/60 dark:bg-slate-700/60;
+  }
+}
+
