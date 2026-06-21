@@ -97,9 +97,28 @@ export function getMonthLabel(key: string): string {
 
 const PER_PAGE = 30;
 
+async function detectMode(): Promise<"static" | "live"> {
+  return "static";
+}
+
 export async function fetchCommits(
   page = 1
 ): Promise<ApiResponse> {
+  if ((await detectMode()) === "static") {
+    try {
+      const res = await fetch("/data/growth.json");
+      if (!res.ok) return { commits: [], total: 0, hasMore: false };
+      const data = (await res.json()) as ApiResponse;
+      return {
+        commits: data.commits ?? [],
+        total: data.total ?? 0,
+        hasMore: data.hasMore ?? false,
+      };
+    } catch {
+      return { commits: [], total: 0, hasMore: false };
+    }
+  }
+
   const url = `${GITHUB_API}/commits?sha=master&per_page=${PER_PAGE}&page=${page}`;
   const res = await fetch(url, {
     next: { revalidate: 3600 },

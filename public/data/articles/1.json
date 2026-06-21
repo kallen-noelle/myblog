@@ -1,0 +1,17 @@
+{
+  "id": 1,
+  "title": "欢迎来到栏轩阁",
+  "summary": "这是我的个人技术博客，记录后端开发、前端技术探索与项目心得。",
+  "content": "# 欢迎来到栏轩阁\n\n这是我的个人技术博客，主要记录以下内容：\n\n## 技术探索\n\n- **前端开发**：React、Next.js、Tailwind CSS 等\n- **后端开发**：Python、Java、Spring Boot 等\n- **数据库**：MySQL、Redis 等\n\n## 项目心得\n\n在这里，我会分享各种项目的开发经验，包括：\n\n1. 项目架构设计\n2. 技术选型思考\n3. 开发过程中的踩坑与解决方案\n\n## 学习笔记\n\n持续学习是程序员必备的品质。我会在这里记录：\n\n- 新技术的学习心得\n- 读书笔记\n- 技术分享\n\n---\n\n感谢你的访问，希望这里的内容对你有所帮助！",
+  "coverImage": "/bg/noelle2.jpeg",
+  "categoryId": 1,
+  "categoryName": "技术",
+  "tags": [{"id": 1, "name": "博客"}, {"id": 2, "name": "Next.js"}],
+  "isPinned": 1,
+  "isPublished": 1,
+  "viewCount": 128,
+  "commentCount": 5,
+  "createdAt": "2026-06-18",
+  "prev": null,
+  "next": {"id": 2, "title": "Next.js 16 新特性解析"}
+}

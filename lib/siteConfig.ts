@@ -1,31 +1,31 @@
 export const siteConfig = {
   /** 站点标题*/
-  title: "栏轩阁 - 个人技术博客与作品集",
+  title: "kallen`s place - 个人技术博客与作品集",
   /** 作者名称*/
-  authorName: "ppc",
+  authorName: "kallen-noelle",
   /** 个人简介 — 首页展示、侧边栏、友链 */
-  bio: "A personal space for code, science, and thoughts.",
+  bio: "This is my place. I make the rule.",
   /** SEO 描述 — meta description、OG、Twitter Card、RSS 使用此字段 */
-  seoDescription: "栏轩阁 - 个人技术博客，记录后端开发、云原生架构与全栈工程实践，分享从 Spring Boot 微服务到 Vue 3 前端的技术探索与项目心得。",
+  seoDescription: "kallen`s place - 个人技术博客，记录后端开发、 前端的技术探索与项目心得。",
   /** 导航栏品牌名 */
-  navTitle: "栏轩·阁",
+  navTitle: "kallen`s place",
   /** 头像路径，相对 public/ */
-  avatarUrl: "/bg/1.jpg",
+  avatarUrl: "/bg/noelle2.jpeg",
   /** 背景轮播图列表，相对 public/ */
   bgImages: [
-    "/bg/1.jpg", "/bg/2.jpg", "/bg/3.jpg",
-    "/bg/4.jpg", "/bg/5.PNG", "/bg/6.png",
-    "/bg/7.JPG", "/bg/8.JPG", "/bg/9.jpg",
-    "/bg/10.jpg"
+    "/bg/1.jpeg", "/bg/2.jpeg", "/bg/3.jpg",
+    "/bg/4.jpeg", "/bg/5.jpeg", "/bg/6.jpeg",
+    "/bg/7.jpeg", "/bg/8.jpeg", "/bg/9.jpeg",
+    "/bg/10.jpeg"
   ],
 
   /** 社交链接 */
-  github: "github.com/PC2005-cloud",
-  email: "2194844980@qq.com",
-  gitee: "gitee.com/peng-chao2005",
-  qq: "2194844980",
+  github: "github.com/kallen-noelle",
+  email: "2758251905@qq.com",
+  gitee: "gitee.com/kallen-noelle",
+  qq: "2758251905",
   juejin: "juejin.cn/user/3154917256866522",
-  csdn: "blog.csdn.net/2604_96186443",
+  csdn: "blog.csdn.net/2403_88681971",
   cnblogs: "home.cnblogs.com/u/pc2005",
 
   /** 关于页 markdown 正文 */
@@ -43,7 +43,7 @@ export const siteConfig = {
   analytics: "analytics.lxpavilion.top",
 
   /** 仓库信息 */
-  repo: "pc-Blog/next",
+  repo: "kallen-noelle/myblog",
   repoId: "R_kgDOSk99gw",
   /** Giscus 评论分类 */
   giscusCategory: "Announcements",

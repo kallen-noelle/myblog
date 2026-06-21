@@ -1,6 +1,13 @@
 import { create } from "zustand";
 import type { User } from "@/lib/types";
 
+/**
+ * Auth Store - PURE FRONTEND MODE
+ * 
+ * Authentication is disabled in pure frontend mode.
+ * This store is kept for compatibility but always returns isLoggedIn: false
+ */
+
 interface AuthState {
   user: User | null;
   token: string | null;
@@ -9,36 +16,16 @@ interface AuthState {
   logout: () => void;
 }
 
-const USER_KEY = "blog-user";
-
-export const useAuthStore = create<AuthState>()((set) => ({
+export const useAuthStore = create<AuthState>()(() => ({
   user: null,
   token: null,
   isLoggedIn: false,
 
-  setAuth: (token, user) => {
-    localStorage.setItem("token", token);
-    localStorage.setItem(USER_KEY, JSON.stringify(user));
-    set({ token, user, isLoggedIn: true });
+  setAuth: (_token, _user) => {
+    // Disabled in pure frontend mode
   },
 
   logout: () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem(USER_KEY);
-    set({ token: null, user: null, isLoggedIn: false });
+    // Disabled in pure frontend mode
   },
 }));
-
-// Restore from localStorage on load (sync — no flash)
-if (typeof window !== "undefined") {
-  const token = localStorage.getItem("token");
-  if (token) {
-    let user: User | null = null;
-    try {
-      const raw = localStorage.getItem(USER_KEY);
-      if (raw) user = JSON.parse(raw);
-    } catch { /* ignore */ }
-
-    useAuthStore.setState({ token, user, isLoggedIn: true });
-  }
-}

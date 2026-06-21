@@ -1,0 +1,17 @@
+{
+  "id": 2,
+  "title": "Next.js 16 新特性解析",
+  "summary": "深入了解 Next.js 16 的 App Router、Server Components 等新特性，以及如何在实际项目中应用。",
+  "content": "# Next.js 16 新特性解析\n\nNext.js 16 带来了许多激动人心的新特性，让我们一起来探索。\n\n## App Router\n\nApp Router 是 Next.js 16 的核心特性之一：\n\n```typescript\n// app/page.tsx\nexport default function Page() {\n  return <div>Hello World</div>\n}\n```\n\n### 路由组\n\n使用 `(groupName)` 可以创建路由组，不影响 URL 结构：\n\n```\napp/\n├── (main)/     → URL: /\n├── admin/      → URL: /admin\n```\n\n## Server Components\n\n默认情况下，所有组件都是服务端组件：\n\n```typescript\n// 服务端组件 - 不能使用 useState, useEffect\nasync function ServerComponent() {\n  const data = await fetch('/api/data')\n  return <div>{data}</div>\n}\n```\n\n### 客户端组件\n\n需要使用 `'use client'` 标记：\n\n```typescript\n'use client'\n\nimport { useState } from 'react'\n\nexport default function ClientComponent() {\n  const [count, setCount] = useState(0)\n  return <button onClick={() => setCount(count + 1)}>{count}</button>\n}\n```\n\n## 总结\n\nNext.js 16 的这些新特性让开发更加高效，值得深入学习！",
+  "coverImage": "/bg/6.jpeg",
+  "categoryId": 1,
+  "categoryName": "技术",
+  "tags": [{"id": 2, "name": "Next.js"}, {"id": 4, "name": "TypeScript"}],
+  "isPinned": 0,
+  "isPublished": 1,
+  "viewCount": 256,
+  "commentCount": 12,
+  "createdAt": "2026-06-10",
+  "prev": {"id": 1, "title": "欢迎来到栏轩阁"},
+  "next": {"id": 3, "title": "Tailwind CSS 4 实战指南"}
+}

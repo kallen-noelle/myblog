@@ -1,6 +1,6 @@
 <div align="center">
 
-# 栏轩阁 · LanXuan Pavilion
+
 
 **个人技术博客与作品集 — 全栈一体化博客系统**
 [![GitHub Pages](https://img.shields.io/github/actions/workflow/status/pc-Blog/next/deploy.yml?branch=master&label=GitHub%20Pages)](https://github.com/pc-Blog/next/actions)
@@ -17,6 +17,8 @@
 **项目介绍：[https://www.lxpavilion.top/project/18/](https://www.lxpavilion.top/project/18/)**
 
 </div>
+
+
 
 ---
 

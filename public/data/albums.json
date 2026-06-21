@@ -1,0 +1,128 @@
+{
+  "rows": [
+    {
+      "id": 1,
+      "title": "春日风景",
+      "description": "记录春天的美好瞬间，花开满园，生机盎然",
+      "sortOrder": 1,
+      "isPublished": 1,
+      "photos": [
+        {"id": 1, "albumId": 1, "url": "/bg/1.jpeg", "sortOrder": 1},
+        {"id": 2, "albumId": 1, "url": "/bg/2.jpeg", "sortOrder": 2},
+        {"id": 3, "albumId": 1, "url": "/bg/3.jpg", "sortOrder": 3},
+        {"id": 4, "albumId": 1, "url": "/bg/noelle1.jpg", "sortOrder": 4}
+      ]
+    },
+    {
+      "id": 2,
+      "title": "城市夜景",
+      "description": "城市的夜晚灯火璀璨，霓虹闪烁",
+      "sortOrder": 2,
+      "isPublished": 1,
+      "photos": [
+        {"id": 5, "albumId": 2, "url": "/bg/4.jpeg", "sortOrder": 1},
+        {"id": 6, "albumId": 2, "url": "/bg/5.jpeg", "sortOrder": 2},
+        {"id": 7, "albumId": 2, "url": "/bg/6.jpeg", "sortOrder": 3},
+        {"id": 8, "albumId": 2, "url": "/bg/noelle2.jpeg", "sortOrder": 4}
+      ]
+    },
+    {
+      "id": 3,
+      "title": "夏日海滩",
+      "description": "阳光沙滩，海浪轻拍，夏日时光",
+      "sortOrder": 3,
+      "isPublished": 1,
+      "photos": [
+        {"id": 9, "albumId": 3, "url": "/bg/7.jpeg", "sortOrder": 1},
+        {"id": 10, "albumId": 3, "url": "/bg/8.jpeg", "sortOrder": 2},
+        {"id": 11, "albumId": 3, "url": "/bg/9.jpeg", "sortOrder": 3},
+        {"id": 12, "albumId": 3, "url": "/bg/noelle3.jpeg", "sortOrder": 4}
+      ]
+    },
+    {
+      "id": 4,
+      "title": "秋日私语",
+      "description": "金黄落叶，秋高气爽，收获的季节",
+      "sortOrder": 4,
+      "isPublished": 1,
+      "photos": [
+        {"id": 13, "albumId": 4, "url": "/bg/10.jpeg", "sortOrder": 1},
+        {"id": 14, "albumId": 4, "url": "/bg/11.jpeg", "sortOrder": 2},
+        {"id": 15, "albumId": 4, "url": "/bg/12.jpeg", "sortOrder": 3},
+        {"id": 16, "albumId": 4, "url": "/bg/noelle4.jpg", "sortOrder": 4}
+      ]
+    },
+    {
+      "id": 5,
+      "title": "冬日暖阳",
+      "description": "白雪皑皑，银装素裹，冬日的宁静",
+      "sortOrder": 5,
+      "isPublished": 1,
+      "photos": [
+        {"id": 17, "albumId": 5, "url": "/bg/13.jpeg", "sortOrder": 1},
+        {"id": 18, "albumId": 5, "url": "/bg/1.jpeg", "sortOrder": 2},
+        {"id": 19, "albumId": 5, "url": "/bg/noelle5.jpg", "sortOrder": 3},
+        {"id": 20, "albumId": 5, "url": "/bg/2.jpeg", "sortOrder": 4}
+      ]
+    },
+    {
+      "id": 6,
+      "title": "人物肖像",
+      "description": "记录生活中的美好人物瞬间",
+      "sortOrder": 6,
+      "isPublished": 1,
+      "photos": [
+        {"id": 21, "albumId": 6, "url": "/bg/noelle1.jpg", "sortOrder": 1},
+        {"id": 22, "albumId": 6, "url": "/bg/noelle2.jpeg", "sortOrder": 2},
+        {"id": 23, "albumId": 6, "url": "/bg/noelle3.jpeg", "sortOrder": 3},
+        {"id": 24, "albumId": 6, "url": "/bg/noelle4.jpg", "sortOrder": 4},
+        {"id": 25, "albumId": 6, "url": "/bg/noelle5.jpg", "sortOrder": 5},
+        {"id": 26, "albumId": 6, "url": "/bg/noelle6.jpg", "sortOrder": 6},
+        {"id": 27, "albumId": 6, "url": "/bg/noelle7.jpeg", "sortOrder": 7}
+      ]
+    },
+    {
+      "id": 7,
+      "title": "自然风光",
+      "description": "山川湖海，大自然的壮美景色",
+      "sortOrder": 7,
+      "isPublished": 1,
+      "photos": [
+        {"id": 28, "albumId": 7, "url": "/bg/3.jpg", "sortOrder": 1},
+        {"id": 29, "albumId": 7, "url": "/bg/4.jpeg", "sortOrder": 2},
+        {"id": 30, "albumId": 7, "url": "/bg/5.jpeg", "sortOrder": 3},
+        {"id": 31, "albumId": 7, "url": "/bg/6.jpeg", "sortOrder": 4},
+        {"id": 32, "albumId": 7, "url": "/bg/7.jpeg", "sortOrder": 5}
+      ]
+    },
+    {
+      "id": 8,
+      "title": "建筑艺术",
+      "description": "城市建筑的艺术之美",
+      "sortOrder": 8,
+      "isPublished": 1,
+      "photos": [
+        {"id": 33, "albumId": 8, "url": "/bg/8.jpeg", "sortOrder": 1},
+        {"id": 34, "albumId": 8, "url": "/bg/9.jpeg", "sortOrder": 2},
+        {"id": 35, "albumId": 8, "url": "/bg/10.jpeg", "sortOrder": 3},
+        {"id": 36, "albumId": 8, "url": "/bg/11.jpeg", "sortOrder": 4}
+      ]
+    },
+    {
+      "id": 9,
+      "title": "旅行记忆",
+      "description": "走过的路，看过的风景",
+      "sortOrder": 9,
+      "isPublished": 1,
+      "photos": [
+        {"id": 37, "albumId": 9, "url": "/bg/12.jpeg", "sortOrder": 1},
+        {"id": 38, "albumId": 9, "url": "/bg/13.jpeg", "sortOrder": 2},
+        {"id": 39, "albumId": 9, "url": "/bg/1.jpeg", "sortOrder": 3},
+        {"id": 40, "albumId": 9, "url": "/bg/2.jpeg", "sortOrder": 4},
+        {"id": 41, "albumId": 9, "url": "/bg/3.jpg", "sortOrder": 5}
+      ]
+    }
+   
+  ],
+  "total":9
+}

@@ -238,7 +238,9 @@ export default function GalleryClient() {
           })
         );
         setAlbums(enriched);
-      } catch { setAlbums([]); } finally { setLoading(false); }
+      } 
+      catch { setAlbums([]); } 
+      finally { setLoading(false); }
     })();
   }, []);
 
@@ -271,7 +273,8 @@ export default function GalleryClient() {
         </div>
       ) : (
         <AnimatePresence mode="wait">
-          {expandedId === null ? (
+          {expandedId === null ? 
+          (
             /* ── 网格视图 ── */
             <motion.div
               key="grid"
@@ -295,7 +298,9 @@ export default function GalleryClient() {
                 </div>
               ))}
             </motion.div>
-          ) : (
+          ) 
+          : 
+          (
             /* ── 展开视图 ── */
             <motion.div
               key="expanded"

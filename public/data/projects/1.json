@@ -1,0 +1,21 @@
+{
+  "id": 1,
+  "name": "个人博客系统",
+  "summary": "基于 Next.js 16 + Tailwind CSS 的全栈个人博客系统，支持文章管理、项目展示、相册等功能。",
+  "content": "# 个人博客系统\n\n## 项目简介\n\n这是一个现代化的个人博客系统，采用最新的技术栈开发。\n\n## 技术栈\n\n| 技术 | 用途 |\n|------|------|\n| Next.js 16 | 前端框架 |\n| TypeScript | 类型安全 |\n| Tailwind CSS | 样式 |\n| Framer Motion | 动画 |\n\n## 功能特性\n\n### 内容管理\n\n- 文章发布与管理\n- 项目展示\n- 相册管理\n- 说说动态\n\n### 视觉效果\n\n- 玻璃拟态设计\n- Live2D 看板娘\n- 粒子特效\n- 明暗双主题\n\n### 内置工具\n\n- 2048 游戏\n- 贪吃蛇\n- 密码生成器\n- 二维码生成\n\n## 部署方式\n\n支持多种部署方式：\n\n1. GitHub Pages（静态导出）\n2. Vercel（推荐）\n3. Docker\n\n---\n\n欢迎访问体验！",
+  "coverImage": "/bg/noelle2.jpeg",
+  "categoryId": 6,
+  "categoryName": "全栈项目",
+  "techs": [
+    {"id": 1, "name": "Next.js"},
+    {"id": 2, "name": "TypeScript"},
+    {"id": 3, "name": "Tailwind CSS"},
+    {"id": 4, "name": "Framer Motion"}
+  ],
+  "githubUrl": "https://github.com/kallen/myblog",
+  "demoUrl": "https://blog.example.com",
+  "isPublished": 1,
+  "createdAt": "2026-06-01",
+  "prev": null,
+  "next": {"id": 2, "name": "任务管理系统"}
+}

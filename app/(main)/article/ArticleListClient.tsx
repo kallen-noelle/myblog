@@ -1,13 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import type { Category, Tag } from "@/lib/types";
 import { getList as getCategories } from "@/lib/api/category";
 import { getList as getTags } from "@/lib/api/tag";
 import ArticleList from "@/app/_components/article/ArticleList";
-import SearchBar from "@/app/_components/common/SearchBar";
-import CategoryNav from "@/app/_components/common/CategoryNav";
-import TagCloud from "@/app/_components/common/TagCloud";
 
 export default function ArticlePage() {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -15,30 +13,163 @@ export default function ArticlePage() {
   const [categoryId, setCategoryId] = useState<number | undefined>();
   const [tagId, setTagId] = useState<number | undefined>();
   const [keyword, setKeyword] = useState("");
+  const [activeTab, setActiveTab] = useState<"all" | "pinned">("all");
 
   useEffect(() => {
     getCategories().then((data) =>
-      setCategories(data.rows.filter((c) => c.type === "ARTICLE"))
+      setCategories(data.rows.filter((c: { type: string }) => c.type === "ARTICLE"))
     ).catch(() => {});
     getTags().then((data) => setTags(data.rows)).catch(() => {});
   }, []);
 
   return (
-    <>
-      <h1 className="text-4xl font-black tracking-tighter text-slate-900 dark:text-white mb-2">Articles</h1>
-      <p className="text-slate-500 dark:text-slate-400 mb-6">Tech, research, and thoughts.</p>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="mb-12"
+      >
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <div>
+            <h1 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white">
+              Articles
+            </h1>
+            <p className="text-slate-500 dark:text-slate-400 text-lg">
+              探索技术，分享思考，记录成长
+            </p>
+          </div>
+        </div>
+      </motion.div>
 
-      <div className="flex flex-col gap-4 mb-8">
-        <SearchBar onSearch={setKeyword} />
+      {/* Tabs */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="flex gap-2 mb-8"
+      >
+        <button
+          onClick={() => setActiveTab("all")}
+          className={`px-5 py-2.5 rounded-xl font-medium transition-all ${
+            activeTab === "all"
+              ? "bg-indigo-500 text-white shadow-lg shadow-indigo-500/30"
+              : "bg-white/30 dark:bg-slate-800/30 text-slate-600 dark:text-slate-300 hover:bg-white/50 dark:hover:bg-slate-800/50"
+          }`}
+        >
+          全部文章
+        </button>
+        <button
+          onClick={() => setActiveTab("pinned")}
+          className={`px-5 py-2.5 rounded-xl font-medium transition-all ${
+            activeTab === "pinned"
+              ? "bg-indigo-500 text-white shadow-lg shadow-indigo-500/30"
+              : "bg-white/30 dark:bg-slate-800/30 text-slate-600 dark:text-slate-300 hover:bg-white/50 dark:hover:bg-slate-800/50"
+          }`}
+        >
+          精选推荐
+        </button>
+      </motion.div>
+
+      {/* Search & Filters */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="mb-8"
+      >
+        {/* Search Bar */}
+        <div className="relative mb-6">
+          <input
+            type="text"
+            placeholder="搜索文章..."
+            value={keyword}
+            onChange={(e) => setKeyword(e.target.value)}
+            className="w-full px-5 py-3.5 pl-12 rounded-2xl bg-white/30 dark:bg-slate-800/30 backdrop-blur-md border border-white/40 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
+          />
+          <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+
+        {/* Categories */}
         {categories.length > 0 && (
-          <CategoryNav categories={categories} activeId={categoryId} onSelect={setCategoryId} />
+          <div className="mb-4">
+            <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3">分类筛选</h3>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => setCategoryId(undefined)}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                  categoryId === undefined
+                    ? "bg-indigo-500 text-white shadow-md"
+                    : "bg-white/30 dark:bg-slate-800/30 text-slate-600 dark:text-slate-300 hover:bg-white/50 dark:hover:bg-slate-800/50"
+                }`}
+              >
+                全部
+              </button>
+              {categories.map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => setCategoryId(cat.id)}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                    categoryId === cat.id
+                      ? "bg-indigo-500 text-white shadow-md"
+                      : "bg-white/30 dark:bg-slate-800/30 text-slate-600 dark:text-slate-300 hover:bg-white/50 dark:hover:bg-slate-800/50"
+                  }`}
+                >
+                  {cat.name}
+                </button>
+              ))}
+            </div>
+          </div>
         )}
-        {tags.length > 0 && (
-          <TagCloud tags={tags} activeId={tagId} onSelect={setTagId} />
-        )}
-      </div>
 
-      <ArticleList categoryId={categoryId} tagId={tagId} keyword={keyword} />
-    </>
+        {/* Tags */}
+        {tags.length > 0 && (
+          <div>
+            <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3">标签筛选</h3>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => setTagId(undefined)}
+                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+                  tagId === undefined
+                    ? "bg-purple-500 text-white shadow-md"
+                    : "bg-white/30 dark:bg-slate-800/30 text-slate-600 dark:text-slate-300 hover:bg-white/50 dark:hover:bg-slate-800/50"
+                }`}
+              >
+                全部标签
+              </button>
+              {tags.slice(0, 10).map((tag) => (
+                <button
+                  key={tag.id}
+                  onClick={() => setTagId(tag.id)}
+                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+                    tagId === tag.id
+                      ? "bg-purple-500 text-white shadow-md"
+                      : "bg-white/30 dark:bg-slate-800/30 text-slate-600 dark:text-slate-300 hover:bg-white/50 dark:hover:bg-slate-800/50"
+                  }`}
+                >
+                  #{tag.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </motion.div>
+
+      {/* Article List */}
+      <ArticleList
+        categoryId={categoryId}
+        tagId={tagId}
+        keyword={keyword}
+        showPinnedOnly={activeTab === "pinned"}
+      />
+    </div>
   );
 }

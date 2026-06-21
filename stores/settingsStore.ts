@@ -12,7 +12,7 @@ interface SettingsState {
 export const useSettingsStore = create<SettingsState>()(
   (set) => ({
     bgImageIndex: -1,
-    bgBlur: 12,
+    bgBlur: 4,
     particleDensity: 50,
     setBgImage: (index) => set({ bgImageIndex: index }),
     setBgBlur: (blur) => set({ bgBlur: blur }),
