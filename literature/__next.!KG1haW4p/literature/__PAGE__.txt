@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[19063,["/_next/static/chunks/0wdrht8t97h52.js","/_next/static/chunks/0oj_gqyj_v382.js","/_next/static/chunks/14_kbxgh1h6cu.js","/_next/static/chunks/08x5.uh0or1g1.js","/_next/static/chunks/0fsx.17qdrlit.js"],"default"]
+3:I[54439,["/_next/static/chunks/0wdrht8t97h52.js","/_next/static/chunks/0oj_gqyj_v382.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"首页\",\"item\":\"https://www.xxxxxxxxxxxxx.top/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"文学创作\",\"item\":\"https://www.xxxxxxxxxxxxx.top/literature\"}]}"}}],["$","span",null,{"className":"sr-only","children":"诗歌、散文、随笔与文学创作，用文字记录思考、情感与生活感悟。在代码之外，用人文视角观察世界，分享阅读与写作的心得。"}],["$","$L2",null,{}]],[["$","script","script-0",{"src":"/_next/static/chunks/0fsx.17qdrlit.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"0ebFpfAt9WKc02tNVFAGh"}
+5:null
