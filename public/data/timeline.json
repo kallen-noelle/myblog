@@ -2,444 +2,53 @@
   "rows": [
     {
       "id": 1,
-      "title": "开始学习编程",
-      "description": "第一次接触 Python，开启了编程之旅。从 Hello World 开始，探索代码的奇妙世界。",
-      "eventDate": "2020-09-01",
+      "title": "blog开工",
+      "description": "以pc的blog为基础开发，我的blog",
+      "eventDate": "2026-06-18",
       "sortOrder": 1,
       "icon": "code",
-      "image": "/bg/1.jpeg",
       "color": "indigo"
     },
     {
       "id": 2,
-      "title": "完成第一个项目",
-      "description": "用 Python 写了一个简单的爬虫程序，爬取了豆瓣电影 Top 250 的数据并进行分析。",
-      "eventDate": "2020-11-15",
+      "title": "修改背景的展示方式",
+      "description": "用ai模仿blibli的head 的背景展示方式，虽然无法实现完全一致的效果，但是ai实现的效果也不错。",
+      "eventDate": "2026-06-19",
       "sortOrder": 2,
       "icon": "rocket",
-      "image": "/bg/2.jpeg",
       "color": "green"
     },
     {
       "id": 3,
-      "title": "学习数据结构",
-      "description": "系统学习数据结构与算法，掌握了链表、树、图等基本数据结构。",
-      "eventDate": "2021-01-10",
+      "title": "修改工具的布局",
+      "description": "调整了工具的布局，使其更加美观。",
+      "eventDate": "2026-06-20",
       "sortOrder": 3,
       "icon": "tree",
-      "image": "/bg/3.jpg",
+
       "color": "blue"
     },
     {
       "id": 4,
-      "title": "学习前端开发",
-      "description": "开始学习 HTML、CSS、JavaScript，掌握网页开发基础知识。",
-      "eventDate": "2021-03-20",
+      "title": "实现timeline",
+      "description": "在blog中实现了timeline功能，用户可以在blog中查看自己的操作记录。",
+      "eventDate": "2026-06-20",
       "sortOrder": 4,
       "icon": "globe",
-      "image": "/bg/4.jpeg",
+
       "color": "cyan"
     },
     {
       "id": 5,
-      "title": "完成前端实战项目",
-      "description": "独立完成了一个响应式企业官网，运用了 Flexbox 和 Grid 布局。",
-      "eventDate": "2021-05-15",
+      "title": "完成友链，并添加数据",
+      "description": "在blog中实现了友链功能，漂流瓶中是其他朋友的blog链接。。",
+      "eventDate": "2026-06-20",
       "sortOrder": 5,
       "icon": "layout",
-      "image": "/bg/5.jpeg",
-      "color": "purple"
-    },
-    {
-      "id": 6,
-      "title": "接触 React",
-      "description": "学习 React 框架，理解组件化开发思想，完成了第一个 React Todo 应用。",
-      "eventDate": "2021-08-10",
-      "sortOrder": 6,
-      "icon": "atom",
-      "image": "/bg/6.jpeg",
-      "color": "blue"
-    },
-    {
-      "id": 7,
-      "title": "学习 Node.js",
-      "description": "开始学习 Node.js 后端开发，理解了事件循环和异步编程模型。",
-      "eventDate": "2021-11-01",
-      "sortOrder": 7,
-      "icon": "server",
-      "image": "/bg/7.jpeg",
-      "color": "green"
-    },
-    {
-      "id": 8,
-      "title": "搭建个人博客",
-      "description": "使用 Next.js 搭建了第一个个人博客网站，记录学习历程和技术心得。",
-      "eventDate": "2022-01-20",
-      "sortOrder": 8,
-      "icon": "book-open",
-      "image": "/bg/8.jpeg",
-      "color": "indigo"
-    },
-    {
-      "id": 9,
-      "title": "学习数据库",
-      "description": "系统学习 MySQL 数据库，掌握了 SQL 查询、索引优化等核心知识。",
-      "eventDate": "2022-04-15",
-      "sortOrder": 9,
-      "icon": "database",
-      "image": "/bg/9.jpeg",
-      "color": "orange"
-    },
-    {
-      "id": 10,
-      "title": "学习 TypeScript",
-      "description": "深入学习 TypeScript，提升代码质量和开发效率，重构了博客项目。",
-      "eventDate": "2022-07-01",
-      "sortOrder": 10,
-      "icon": "typescript",
-      "image": "/bg/10.jpeg",
-      "color": "blue"
-    },
-    {
-      "id": 11,
-      "title": "掌握 Git 版本控制",
-      "description": "熟练使用 Git 进行版本控制，学会了分支管理和团队协作流程。",
-      "eventDate": "2022-09-10",
-      "sortOrder": 11,
-      "icon": "git-branch",
-      "image": "/bg/11.jpeg",
-      "color": "red"
-    },
-    {
-      "id": 12,
-      "title": "学习 Redis 缓存",
-      "description": "学习 Redis 缓存技术，理解了缓存策略和应用场景。",
-      "eventDate": "2022-12-05",
-      "sortOrder": 12,
-      "icon": "zap",
-      "image": "/bg/12.jpeg",
-      "color": "yellow"
-    },
-    {
-      "id": 13,
-      "title": "探索后端开发",
-      "description": "学习 Spring Boot，了解 Java 后端开发，完成了一个简单的 RESTful API。",
-      "eventDate": "2023-02-20",
-      "sortOrder": 13,
-      "icon": "layers",
-      "image": "/bg/13.jpeg",
-      "color": "orange"
-    },
-    {
-      "id": 14,
-      "title": "学习 Docker",
-      "description": "掌握 Docker 容器化技术，实现了博客项目的一键部署。",
-      "eventDate": "2023-05-15",
-      "sortOrder": 14,
-      "icon": "box",
-      "image": "/bg/noelle1.jpg",
-      "color": "blue"
-    },
-    {
-      "id": 15,
-      "title": "学习 Kubernetes",
-      "description": "了解 Kubernetes 容器编排，学习了 Pod、Service、Deployment 等核心概念。",
-      "eventDate": "2023-08-01",
-      "sortOrder": 15,
-      "icon": "cloud",
-      "image": "/bg/noelle2.jpeg",
-      "color": "cyan"
-    },
-    {
-      "id": 16,
-      "title": "博客重构升级",
-      "description": "使用 Tailwind CSS 和 Framer Motion 重构博客，提升视觉体验和交互效果。",
-      "eventDate": "2023-10-10",
-      "sortOrder": 16,
-      "icon": "palette",
-      "image": "/bg/noelle3.jpeg",
-      "color": "pink"
-    },
-    {
-      "id": 17,
-      "title": "学习微服务架构",
-      "description": "学习微服务架构设计，理解了服务拆分、服务发现、负载均衡等概念。",
-      "eventDate": "2024-01-05",
-      "sortOrder": 17,
-      "icon": "grid",
-      "image": "/bg/noelle4.jpg",
-      "color": "purple"
-    },
-    {
-      "id": 18,
-      "title": "掌握消息队列",
-      "description": "学习 RabbitMQ 和 Kafka，理解了消息队列的应用场景和性能优化。",
-      "eventDate": "2024-03-20",
-      "sortOrder": 18,
-      "icon": "mail",
-      "image": "/bg/noelle5.jpg",
-      "color": "orange"
-    },
-    {
-      "id": 19,
-      "title": "学习 CI/CD",
-      "description": "搭建持续集成和持续部署流水线，实现自动化测试和部署。",
-      "eventDate": "2024-06-15",
-      "sortOrder": 19,
-      "icon": "git-merge",
-      "image": "/bg/noelle6.jpg",
-      "color": "green"
-    },
-    {
-      "id": 20,
-      "title": "参与开源项目",
-      "description": "首次向开源项目提交 PR，贡献了一个功能模块的开发。",
-      "eventDate": "2024-09-10",
-      "sortOrder": 20,
-      "icon": "heart",
-      "image": "/bg/noelle7.jpeg",
-      "color": "red"
-    },
-    {
-      "id": 21,
-      "title": "学习 GraphQL",
-      "description": "学习 GraphQL 查询语言，理解了 Schema、Query、Mutation 等核心概念。",
-      "eventDate": "2024-11-25",
-      "sortOrder": 21,
-      "icon": "share-2",
-      "image": "/bg/1.jpeg",
-      "color": "pink"
-    },
-    {
-      "id": 22,
-      "title": "全栈开发实践",
-      "description": "独立完成了一个全栈项目，涵盖前端、后端、数据库和部署。",
-      "eventDate": "2025-02-15",
-      "sortOrder": 22,
-      "icon": "layers",
-      "image": "/bg/2.jpeg",
-      "color": "indigo"
-    },
-    {
-      "id": 23,
-      "title": "学习云原生技术",
-      "description": "深入学习云原生技术栈，包括容器、服务网格、Serverless 等。",
-      "eventDate": "2025-05-01",
-      "sortOrder": 23,
-      "icon": "cloud",
-      "image": "/bg/3.jpg",
-      "color": "blue"
-    },
-    {
-      "id": 24,
-      "title": "学习 AI 技术",
-      "description": "探索人工智能和机器学习领域，完成了几个 AI 相关的小项目。",
-      "eventDate": "2025-08-20",
-      "sortOrder": 24,
-      "icon": "brain",
-      "image": "/bg/4.jpeg",
-      "color": "purple"
-    },
-    {
-      "id": 25,
-      "title": "学习大语言模型",
-      "description": "学习 LLM 原理和应用开发，掌握了 Prompt Engineering 技巧。",
-      "eventDate": "2025-11-10",
-      "sortOrder": 25,
-      "icon": "message-circle",
-      "image": "/bg/5.jpeg",
-      "color": "cyan"
-    },
-    {
-      "id": 26,
-      "title": "技术分享演讲",
-      "description": "在技术社区进行了第一次公开演讲，分享全栈开发经验。",
-      "eventDate": "2026-01-15",
-      "sortOrder": 26,
-      "icon": "mic",
-      "image": "/bg/6.jpeg",
-      "color": "red"
-    },
-    {
-      "id": 27,
-      "title": "持续学习",
-      "description": "保持学习热情，探索更多技术领域，不断提升自己。",
-      "eventDate": "2026-06-21",
-      "sortOrder": 27,
-      "icon": "trending-up",
-      "image": "/bg/7.jpeg",
-      "color": "green"
-    },
-    {
-      "id": 28,
-      "title": "Linux 系统学习",
-      "description": "深入理解 Linux 操作系统原理，掌握 Shell 脚本编写和系统管理。",
-      "eventDate": "2021-06-12",
-      "sortOrder": 28,
-      "icon": "terminal",
-      "image": "/bg/8.jpeg",
-      "color": "yellow"
-    },
-    {
-      "id": 29,
-      "title": "Python 进阶",
-      "description": "学习 Python 装饰器、生成器、多线程等高级特性，写出更优雅的代码。",
-      "eventDate": "2021-09-05",
-      "sortOrder": 29,
-      "icon": "code",
-      "image": "/bg/9.jpeg",
-      "color": "blue"
-    },
-    {
-      "id": 30,
-      "title": "Vue.js 入门",
-      "description": "学习 Vue 3 组合式 API，理解了响应式原理和状态管理。",
-      "eventDate": "2022-03-08",
-      "sortOrder": 30,
-      "icon": "layout",
-      "image": "/bg/10.jpeg",
-      "color": "green"
-    },
-    {
-      "id": 31,
-      "title": "数据可视化",
-      "description": "使用 ECharts 和 D3.js 实现数据可视化，掌握图表设计和交互优化。",
-      "eventDate": "2022-06-20",
-      "sortOrder": 31,
-      "icon": "bar-chart",
-      "image": "/bg/11.jpeg",
-      "color": "purple"
-    },
-    {
-      "id": 32,
-      "title": "性能优化实践",
-      "description": "学习前端性能优化技巧，包括代码分割、懒加载、缓存策略等。",
-      "eventDate": "2022-10-15",
-      "sortOrder": 32,
-      "icon": "zap",
-      "image": "/bg/12.jpeg",
-      "color": "yellow"
-    },
-    {
-      "id": 33,
-      "title": "Electron 桌面应用",
-      "description": "使用 Electron 开发桌面应用，掌握了进程通信和原生 API 调用。",
-      "eventDate": "2023-01-10",
-      "sortOrder": 33,
-      "icon": "monitor",
-      "image": "/bg/noelle1.jpg",
-      "color": "indigo"
-    },
-    {
-      "id": 34,
-      "title": "Nginx 配置实战",
-      "description": "学习 Nginx 反向代理、负载均衡和 SSL 配置，提升了系统部署能力。",
-      "eventDate": "2023-04-22",
-      "sortOrder": 34,
-      "icon": "server",
-      "image": "/bg/noelle2.jpeg",
-      "color": "green"
-    },
-    {
-      "id": 35,
-      "title": "Three.js 3D 开发",
-      "description": "探索 WebGL 和 Three.js，实现了酷炫的 3D 网页效果和交互动画。",
-      "eventDate": "2023-07-18",
-      "sortOrder": 35,
-      "icon": "box",
-      "image": "/bg/noelle3.jpeg",
-      "color": "cyan"
-    },
-    {
-      "id": 36,
-      "title": "Flutter 跨平台开发",
-      "description": "学习 Flutter 跨平台框架，同时开发 iOS 和 Android 移动端应用。",
-      "eventDate": "2024-04-10",
-      "sortOrder": 36,
-      "icon": "smartphone",
-      "image": "/bg/noelle4.jpg",
-      "color": "blue"
-    },
-    {
-      "id": 37,
-      "title": "Rust 系统编程",
-      "description": "接触 Rust 语言，学习内存安全和并发编程，提升系统级编程能力。",
-      "eventDate": "2024-07-25",
-      "sortOrder": 37,
-      "icon": "settings",
-      "image": "/bg/noelle5.jpg",
-      "color": "orange"
-    },
-    {
-      "id": 38,
-      "title": "WebAssembly 探索",
-      "description": "学习 WebAssembly 技术，在浏览器中运行高性能代码。",
-      "eventDate": "2024-10-30",
-      "sortOrder": 38,
-      "icon": "cpu",
-      "image": "/bg/noelle6.jpg",
-      "color": "pink"
-    },
-    {
-      "id": 39,
-      "title": "算法竞赛突破",
-      "description": "通过 LeetCode 刷题和算法训练，在编程竞赛中取得优异成绩。",
-      "eventDate": "2025-01-20",
-      "sortOrder": 39,
-      "icon": "award",
-      "image": "/bg/noelle7.jpeg",
-      "color": "yellow"
-    },
-    {
-      "id": 40,
-      "title": "开源项目维护",
-      "description": "开始维护个人开源项目，处理 Issue 和 PR，积累社区协作经验。",
-      "eventDate": "2025-04-15",
-      "sortOrder": 40,
-      "icon": "users",
-      "image": "/bg/1.jpg",
-      "color": "green"
-    },
-    {
-      "id": 41,
-      "title": "技术博客写作",
-      "description": "坚持技术写作，分享学习心得，博客访问量突破 10 万次。",
-      "eventDate": "2025-07-08",
-      "sortOrder": 41,
-      "icon": "pen-tool",
-      "image": "/bg/2.jpeg",
-      "color": "indigo"
-    },
-    {
-      "id": 42,
-      "title": "系统设计能力",
-      "description": "学习分布式系统设计，理解 CAP 定理、一致性协议等核心概念。",
-      "eventDate": "2025-09-28",
-      "sortOrder": 42,
-      "icon": "git-branch",
-      "image": "/bg/3.jpg",
-      "color": "red"
-    },
-    {
-      "id": 43,
-      "title": "技术视野拓展",
-      "description": "关注前沿技术动态，学习 Web3、区块链等新兴技术方向。",
-      "eventDate": "2026-03-15",
-      "sortOrder": 43,
-      "icon": "globe",
-      "image": "/bg/4.jpeg",
-      "color": "cyan"
-    },
-    {
-      "id": 44,
-      "title": "成为技术负责人",
-      "description": "带领小团队完成项目开发，学习项目管理和团队协作。",
-      "eventDate": "2026-06-01",
-      "sortOrder": 44,
-      "icon": "users",
-      "image": "/bg/5.jpeg",
+
       "color": "purple"
     }
+
   ],
-  "total": 44
+  "total": 5
 }

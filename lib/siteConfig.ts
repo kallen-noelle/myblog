@@ -10,13 +10,14 @@ export const siteConfig = {
   /** 导航栏品牌名 */
   navTitle: "kallen`s place",
   /** 头像路径，相对 public/ */
-  avatarUrl: "/bg/noelle2.jpeg",
+  avatarUrl: "/images/noelle/noelle2.jpeg",
   /** 背景轮播图列表，相对 public/ */
   bgImages: [
-    "/bg/1.jpeg", "/bg/2.jpeg", "/bg/3.jpg",
-    "/bg/4.jpeg", "/bg/5.jpeg", "/bg/6.jpeg",
-    "/bg/7.jpeg", "/bg/8.jpeg", "/bg/9.jpeg",
-    "/bg/10.jpeg"
+    "/images/bg/7.jpeg",  "/images/bg/1.jpeg", "/images/bg/11.jpeg", 
+    "/images/bg/13.jpg",
+    "/images/bg/4.jpeg",  "/images/bg/6.jpeg",
+   "/images/bg/8.jpeg", "/images/bg/9.jpeg",
+    "/images/bg/10.jpeg"
   ],
 
   /** 社交链接 */
@@ -44,10 +45,10 @@ export const siteConfig = {
 
   /** 仓库信息 */
   repo: "kallen-noelle/myblog",
-  repoId: "R_kgDOSk99gw",
+  repoId: "R_kgDOS-WDjA",
   /** Giscus 评论分类 */
   giscusCategory: "Announcements",
-  giscusCategoryId: "DIC_kwDOSk99g84C9uoJ",
+  giscusCategoryId: "DIC_kwDOS-WDjM4C_mdx",
 
   /** cloudeflare 相关 */
   ZoneID: "5bf4f5d460e2073282b6ff62d01f2ca4",

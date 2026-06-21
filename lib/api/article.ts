@@ -9,6 +9,9 @@ export async function getPublicList(params: PageDTO<ArticleQueryDTO>) {
 
     let filtered = all.rows;
     const q = params.query;
+    if (q?.isPublished !== undefined) {
+      filtered = filtered.filter((a) => a.isPublished === (q.isPublished ? 1 : 0));
+    }
     if (q?.categoryId) filtered = filtered.filter((a) => a.categoryId === q.categoryId);
     if (q?.tagId) filtered = filtered.filter((a) => a.tags?.some((t) => t.id === q.tagId));
     if (q?.keyword) {

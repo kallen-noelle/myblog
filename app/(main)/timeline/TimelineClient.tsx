@@ -11,7 +11,6 @@ interface TimelineEvent {
   eventDate: string;
   sortOrder: number;
   icon: string;
-  image: string;
   color: string;
 }
 
@@ -138,20 +137,7 @@ export default function TimelineClient() {
                         whileHover={{ scale: 1.02 }}
                         className="group rounded-3xl overflow-hidden bg-white/40 dark:bg-slate-800/40 backdrop-blur-md border border-white/40 dark:border-white/10 shadow-xl"
                       >
-                        <div className="aspect-video relative overflow-hidden">
-                          <img
-                            src={event.image}
-                            alt={event.title}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                          <div className="absolute bottom-4 left-4 right-4">
-                            <span className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold ${colorBgMap[event.color]} ${colorTextMap[event.color]}`}>
-                              <IconComponent className="w-3 h-3" />
-                              {event.title}
-                            </span>
-                          </div>
-                        </div>
+                  
                         <div className="p-6">
                           <h3 className="text-xl font-black text-slate-900 dark:text-white mb-3">
                             {event.title}
