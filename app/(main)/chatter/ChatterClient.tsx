@@ -20,11 +20,11 @@ interface Moment {
 }
 
 interface ChatterItem {
-  id: number;
+  id?: number;
   content: string;
-  images: string[];
-  mood: string;
-  createTime: string;
+  images?: string[];
+  mood?: string;
+  createTime?: string;
 }
 
 interface Photo {

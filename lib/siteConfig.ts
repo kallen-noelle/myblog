@@ -25,15 +25,37 @@ export const siteConfig = {
   email: "2758251905@qq.com",
   gitee: "gitee.com/kallen-noelle",
   qq: "2758251905",
-  juejin: "juejin.cn/user/3154917256866522",
+  juejin: "juejin.cn/user/11111111111111111",
   csdn: "blog.csdn.net/2403_88681971",
-  cnblogs: "home.cnblogs.com/u/pc2005",
+  cnblogs: "home.cnblogs.com/u/kallen-noelle",
 
   /** 关于页 markdown 正文 */
-  content: "个人简介",
+  content: `## 你好！我是DL
+
+一位在读软件工程的大二学生，喜欢折腾技术。
+这个博客用来记录我的学习历程、技术探索和日常思考。希望能在这里与志同道合的朋友们交流学习！
+
+### 关于这个博客
+
+这个博客使用 React, Next.js, TypeScript, Tailwind CSS, 构建，采用玻璃拟态（Glassmorphism）设计风格。
+
+### 关于我
+主力语言：Python，JavaScrpt
+略懂： LangChain, React, Next.js, TypeScript, Tailwind CSS
+其他： Git, Docker, Linux, TypeScript.
+兴趣爱好
+打游戏常玩农，原，瓦，部落。
+喜欢听杰伦，taylor ,carly的音乐。
+偶尔看看动漫，最近推荐在超市后门吸烟的二人。
+写代码，折腾各种项目。
+
+### 📫 联系方式
+
+如果你有任何问题或想法，欢迎通过各种方式联系我！
+`,
 
   /** 站点域名 */
-  blog: "www.lxpavilion.top",
+  blog: "www.xxxxxxxxxxxxx.top",
   /** 是否有域名 */
   hasDomain: true,
 
@@ -41,7 +63,7 @@ export const siteConfig = {
   buildDate: "2026-05-21T00:00:00",
 
   /** 获取站点流量的接口 */
-  analytics: "analytics.lxpavilion.top",
+  analytics: "analytics.xxxxxxxxxxxxx.top",
 
   /** 仓库信息 */
   repo: "kallen-noelle/myblog",
@@ -51,7 +73,7 @@ export const siteConfig = {
   giscusCategoryId: "DIC_kwDOS-WDjM4C_mdx",
 
   /** cloudeflare 相关 */
-  ZoneID: "5bf4f5d460e2073282b6ff62d01f2ca4",
+  ZoneID: "xxxxxxxxxxxxxxxxxx",
 
   /** 后端地址 */
   backUrl: "localhost:18016",

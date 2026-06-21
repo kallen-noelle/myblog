@@ -7,7 +7,21 @@
  * No backend API calls are made
  */
 
-// This is a stub to prevent import errors
+// Stub API object for TypeScript compatibility
 // All actual data fetching goes through lib/static-data.ts
+const stubApi = {
+  get: async <T, _R = T>(_url: string): Promise<T> => {
+    return {} as T;
+  },
+  post: async <T, _R = T>(_url: string, _data?: unknown, _config?: unknown): Promise<T> => {
+    return {} as T;
+  },
+  put: async <T, _R = T>(_url: string, _data?: unknown, _config?: unknown): Promise<T> => {
+    return {} as T;
+  },
+  delete: async <T, _R = T>(_url: string, _config?: unknown): Promise<T> => {
+    return {} as T;
+  },
+};
 
-export default null;
+export default stubApi;

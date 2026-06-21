@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import {  ExternalLink, Globe } from "lucide-react";
 import { siteConfig, loadConfig } from "@/lib/config";
 import { assetUrl } from "@/lib/asset-url";
-import type { DashboardVO } from "@/lib/types";
+import type { DashboardVO, OpTag } from "@/lib/types";
 import { get } from "@/lib/api/dashboard";
 import { get as getAbout } from "@/lib/api/about";
 import { getArticleList } from "@/lib/api/op";
@@ -109,7 +109,7 @@ export default function Home() {
     get().then(setDash).catch(() => { });
     getAbout().then(about => { loadConfig(about); setConfigReady(true); }).catch(() => { });
     getArticleList().then(d => {
-      const total = d.rows.reduce((sum: number, t: { articles: { length: number }[] }) => sum + t.articles.length, 0);
+      const total = d.rows.reduce((sum: number, t: OpTag) => sum + t.articles.length, 0);
       setLiteratureCount(total);
     }).catch(() => { });
 

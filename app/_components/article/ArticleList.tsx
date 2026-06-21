@@ -44,7 +44,7 @@ export default function ArticleList({ categoryId, tagId, keyword, showPinnedOnly
         if (!cancelled) {
           let filtered = data.rows;
           if (showPinnedOnly) {
-            filtered = filtered.filter((a) => a.isPinned === 1);
+            filtered = filtered.filter((a: ArticleVO) => a.isPinned === 1);
           }
           setArticles(filtered);
           setTotal(showPinnedOnly ? filtered.length : data.total);

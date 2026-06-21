@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[61461,["/_next/static/chunks/0wdrht8t97h52.js","/_next/static/chunks/0oj_gqyj_v382.js","/_next/static/chunks/14_kbxgh1h6cu.js","/_next/static/chunks/08x5.uh0or1g1.js","/_next/static/chunks/00dyss~dh6.5..js"],"default"]
+3:I[54439,["/_next/static/chunks/0wdrht8t97h52.js","/_next/static/chunks/0oj_gqyj_v382.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"首页\",\"item\":\"https://www.xxxxxxxxxxxxx.top/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"技术文章\",\"item\":\"https://www.xxxxxxxxxxxxx.top/article\"}]}"}}],["$","span",null,{"className":"sr-only","children":"技术文章与开发笔记，涵盖 Web 前端、全栈开发与编程实践。深入解析 JavaScript、TypeScript、React、Next.js 等主流技术，分享实际项目中的经验与解决方案。"}],["$","$L2",null,{}]],[["$","script","script-0",{"src":"/_next/static/chunks/00dyss~dh6.5..js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"0ebFpfAt9WKc02tNVFAGh"}
+5:null

@@ -103,6 +103,7 @@ export interface ArticleVO {
   tags: TagBrief[];
   isPinned: number;
   isPublished: number;
+  viewCount: number;
   commentCount: number;
   createdAt: string;
 }
