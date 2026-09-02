@@ -1,11 +1,11 @@
-"use client";
+﻿"use client";
 
 import type { Media, OpMusic } from "@/lib/types";
 import { siteConfig } from "./siteConfig";
 
 const GH_API = "https://api.github.com";
 const [OWNER, REPO] = siteConfig.repo.split("/");
-const BRANCH = "data";
+const BRANCH = "main";
 
 export interface SyncProgress {
   stage: "collecting" | "blobs" | "tree" | "done" | "error";
@@ -114,7 +114,7 @@ interface MediaItem {
   updateTime?: string;
 }
 
-/** 从 data 分支读取 media-manifest.json */
+/** 从主仓 main 分支 public/data/ 读取 media-manifest.json */
 async function getExistingMediaManifest(
   token: string
 ): Promise<Map<number, MediaItem>> {
@@ -1000,7 +1000,7 @@ export async function generateSyncZip(
     'echo [2/5] 初始化仓库...',
     'git init',
     `git remote add origin https://github.com/${siteConfig.repo}.git`,
-    'git fetch origin data --depth=1 2>nul || echo 无已有 data 分支',
+    'git fetch origin main --depth=1 2>nul || echo 无已有 main 分支',
     'git checkout origin/data -- .github/ 2>nul || echo 无工作流文件需保留',
     'git checkout origin/data -- CNAME 2>nul || echo 无 CNAME 文件',
     'git checkout -b data',
@@ -1050,3 +1050,4 @@ function buildMusicJson(
   }
   return parsed;
 }
+

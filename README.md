@@ -1,19 +1,19 @@
-<div align="center">
+﻿<div align="center">
 
 # kallen's place · kallen-noelle
 
 **个人技术博客与作品集 — 全栈一体化博客系统**
-[![GitHub Pages](https://img.shields.io/github/actions/workflow/status/kallen-noelle/next/deploy.yml?branch=master&label=GitHub%20Pages)](https://github.com/kallen-noelle/next/actions)
+[![GitHub Pages](https://img.shields.io/github/actions/workflow/status/kallen-noelle/myblog/deploy.yml?branch=master&label=GitHub%20Pages)](https://github.com/kallen-noelle/myblog/actions)
 [![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
 [![Node](https://img.shields.io/badge/Node-%3E%3D18-339933?logo=node.js&logoColor=white)](package.json)
 [![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=next.js&logoColor=white)](package.json)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](package.json)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](package.json)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4-06B6D4?logo=tailwindcss&logoColor=white)](package.json)
-[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen)](https://github.com/kallen-noelle/next/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen)](https://github.com/kallen-noelle/myblog/pulls)
 
 **在线体验：[https://www.kallen-noelle.top](https://www.kallen-noelle.top)** ✨
-**源码仓库（Gitee 主 / GitHub 备）：** [gitee.com/kallen-noelle/next](https://gitee.com/kallen-noelle/next) / [github.com/kallen-noelle/next](https://github.com/kallen-noelle/next)
+**源码仓库（Gitee 主 / GitHub 备）：** [gitee.com/kallen-noelle/myblog](https://gitee.com/kallen-noelle/myblog) / [github.com/kallen-noelle/myblog](https://github.com/kallen-noelle/myblog)
 
 </div>
 
@@ -66,10 +66,10 @@
 
 ```bash
 # 克隆仓库
-git clone https://gitee.com/kallen-noelle/next.git    # Gitee 主仓
+git clone https://gitee.com/kallen-noelle/myblog.git    # Gitee 主仓
 # 或
-git clone https://github.com/kallen-noelle/next.git   # GitHub 备仓（镜像同步）
-cd next
+git clone https://github.com/kallen-noelle/myblog.git   # GitHub 备仓（镜像同步）
+cd myblog
 
 # 安装依赖
 pnpm install
@@ -119,13 +119,14 @@ pnpm build:static           # 产物输出到 out/
 
 ### 数据同步（GitHub Pages 静态部署）
 
-后台提供一键数据同步功能，将后端数据同步到 GitHub / Gitee `data` 分支：
+后台提供一键数据同步功能，将后端数据同步到 GitHub / Gitee **主仓 `public/data/` 目录**：
 
-1. 在后台 **数据同步** 页面输入 GitHub Token（需 `repo` 权限）
-2. 分别触发 **JSON 同步**、**媒体同步**、**音乐同步**
-3. 推送 `master` 或 `data` 分支后，GitHub Actions 自动构建并部署
+1. 在后台 **数据同步** 页面输入 Token（Gitee：`projects` 写权限；GitHub：`repo` 权限）
+2. 分别触发 **JSON 同步**、**媒体同步**、**音乐同步**，内容直接提交到 `main` 分支
+3. Push 到 `main` 分支后，GitHub Actions 自动构建并部署
 
-> 仓库托管：代码提交到 **Gitee 主仓**，Gitee → GitHub 镜像同步由 Gitee 的"仓库同步"功能自动完成，GitHub Actions 从镜像仓读取并部署到 gh-pages。
+> 仓库托管：代码提交到 **Gitee 主仓（gitee.com/kallen-noelle/myblog）**，Gitee → GitHub 镜像同步由 Gitee 的"仓库同步"功能自动完成，GitHub Actions 从镜像仓读取并部署到 gh-pages。  
+> 架构说明：**不再使用独立 `data` 分支**，数据和代码统一留在主分支 `public/data/`，消除"双分支同步时机错位 → build:static 生成残缺产物（/_next/data 404）"问题。
 
 ### 常用命令
 
@@ -152,7 +153,7 @@ pnpm lint                # ESLint 代码检查
 ## 📁 项目结构
 
 ```
-next/
+myblog/
 ├── app/                              # Next.js App Router 路由页面
 │   ├── (main)/                       # 主路由组（共享布局）
 │   │   ├── about/                    # 关于页
@@ -283,13 +284,15 @@ pnpm build:static    # 产物输出到 out/
 > 4. **Enforce HTTPS:** GitHub Pages 签完证书后勾选
 
 **数据同步流水线：**
-
 ```
-后端 API  →  数据同步脚本（GitHub Token）  →  data 分支（JSON + 媒体 + 音乐）
-                                                                  ↓
+后端 API  →  数据同步脚本（Gitee/GitHub Token）
+                    ↓
+         直接提交到 主仓 public/data/ 目录（代码+数据同分支）
+                    ↓
 用户访问  ←  GitHub Pages (gh-pages)  ←  CI 构建（build:static）
                  ↑
            Cloudflare CDN 加速/防攻击
+```
 ```
 
 ---
@@ -389,3 +392,5 @@ wrangler deploy
 <div align="center">
   <sub>Built with ❤️ by <a href="https://github.com/kallen-noelle">kallen-noelle</a></sub>
 </div>
+
+

@@ -1,4 +1,4 @@
-export const siteConfig = {
+﻿export const siteConfig = {
   /** 站点标题*/
   title: "kallen`s place - 个人技术博客与作品集",
   /** 作者名称*/
@@ -68,8 +68,8 @@ export const siteConfig = {
   analytics: "analytics.kallen-noelle.top",
 
   /** 仓库信息 */
-  repo: "kallen-noelle/next",
-  repoId: "R_kgDOTC4CKA",
+  repo: "kallen-noelle/myblog",
+  repoId: ""  ,
   /** Giscus 评论分类 */
   giscusCategory: "Announcements",
   giscusCategoryId: "DIC_kwDOS-WDjM4C_mdx",
@@ -80,3 +80,4 @@ export const siteConfig = {
   /** 后端地址 */
   backUrl: "localhost:18016",
 };
+

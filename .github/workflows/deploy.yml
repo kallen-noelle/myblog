@@ -1,8 +1,8 @@
-name: Deploy to GitHub Pages
+﻿name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [master, data]
+    branches: [main, master]
 
 jobs:
   deploy:
@@ -10,24 +10,65 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout master (source code)
+      - name: Checkout source code
         uses: actions/checkout@v4
-        with:
-          ref: master
-          path: source
 
-      - name: Checkout data branch
-        uses: actions/checkout@v4
-        with:
-          ref: data
-          path: data-tmp
-
-      - name: Copy data files into public directory
+      - name: Data integrity & BOM check
         run: |
-          rm -rf data-tmp/.git
-          mkdir -p source/public
-          cp -r data-tmp/. source/public/data/
-          rm -rf data-tmp
+          set -e
+          echo "=== Check JSON files under public/data/ for UTF-8 BOM ==="
+          BAD_BOM=$(grep -rlI $'^\xEF\xBB\xBF' public/data/ || true)
+          if [ -n "$BAD_BOM" ]; then
+            echo "❌ BOM detected in:"
+            echo "$BAD_BOM"
+            echo "Removing BOM automatically..."
+            for f in $BAD_BOM; do
+              sed -i '1s/^\xEF\xBB\xBF//' "$f"
+              echo "  cleaned: $f"
+            done
+          else
+            echo "✅ No BOM found"
+          fi
+
+          echo ""
+          echo "=== Validate articles.json <-> articles/*.json consistency ==="
+          node -e '
+            const fs = require("fs");
+            const index = JSON.parse(fs.readFileSync("public/data/articles.json", "utf-8"));
+            const idsInIndex = new Set((index.records || index).map(r => String(r.id)));
+            const files = fs.readdirSync("public/data/articles").filter(f => f.endsWith(".json"));
+            const idsInFiles = new Set(files.map(f => f.replace(/\.json$/, "")));
+            let ok = true;
+            for (const id of idsInIndex) if (!idsInFiles.has(id)) { console.log(`❌ articles.json 引用 id=${id} 但 public/data/articles/${id}.json 不存在`); ok = false; }
+            for (const id of idsInFiles) {
+              try { JSON.parse(fs.readFileSync(`public/data/articles/${id}.json`, "utf-8")); }
+              catch (e) { console.log(`❌ articles/${id}.json 解析失败:`, e.message); ok = false; }
+            }
+            if (ok) console.log(`✅ articles.json (${idsInIndex.size}条) =  articles/*.json (${idsInFiles.size}个)，一致性通过`);
+            else process.exit(1);
+          '
+
+          echo ""
+          echo "=== Check article image references exist in public/data/media/ ==="
+          node -e '
+            const fs = require("fs");
+            const path = require("path");
+            const files = fs.readdirSync("public/data/articles").filter(f => f.endsWith(".json"));
+            const missing = [];
+            const mediaDir = "public/data";
+            for (const f of files) {
+              const content = fs.readFileSync(`public/data/articles/${f}`, "utf-8");
+              const refs = [...content.matchAll(/(?:src|img|image|cover|media)["\s:=]*["\x27]([^"\x27<>\s)]+\.(?:png|jpe?g|webp|gif|svg))/gi)].map(m => m[1]);
+              for (const rawRef of refs) {
+                if (!rawRef.startsWith("/data/media/") && !rawRef.startsWith("data/media/") && !rawRef.startsWith("media/")) continue;
+                const cleanPath = rawRef.replace(/^\/?(data\/)?/, "");
+                const localPath = path.join(mediaDir, cleanPath);
+                if (!fs.existsSync(localPath)) missing.push(`${f} -> ${rawRef}`);
+              }
+            }
+            if (missing.length === 0) console.log("✅ 文章引用的图片均存在");
+            else { console.log("⚠️  缺失的文章图片引用（请补到 public/data/media/ 下，否则对应位置显示占位图）:"); missing.forEach(x => console.log("  -", x)); }
+          '
 
       - uses: pnpm/action-setup@v4
         with:
@@ -37,14 +78,11 @@ jobs:
         with:
           node-version: 24
           cache: 'pnpm'
-          cache-dependency-path: source/pnpm-lock.yaml
 
       - name: Install dependencies
-        working-directory: ./source
         run: pnpm install
 
       - name: Build static site
-        working-directory: ./source
         run: pnpm run build:static
         env:
           NEXT_PUBLIC_IS_STATIC: "true"
@@ -53,14 +91,35 @@ jobs:
         run: |
           node -e "
             const fs = require('fs');
-            const src = fs.readFileSync('source/lib/siteConfig.ts', 'utf-8');
+            const src = fs.readFileSync('lib/siteConfig.ts', 'utf-8');
             const blog = (src.match(/blog:\s*\"([^\"]+)\"/)||[])[1] || '';
             const hasDomain = /hasDomain:\s*true/.test(src);
-            if (blog && hasDomain) fs.writeFileSync('source/out/CNAME', blog);
+            if (blog && hasDomain) fs.writeFileSync('out/CNAME', blog);
           "
+
+      - name: Verify static export contains every article route
+        run: |
+          set -e
+          node -e '
+            const fs = require("fs");
+            const index = JSON.parse(fs.readFileSync("public/data/articles.json", "utf-8"));
+            const ids = (index.records || index).map(r => String(r.id));
+            let missing = 0;
+            const dataDir = fs.readdirSync("out/_next/data")[0];
+            for (const id of ids) {
+              const html = `out/article/${id}/index.html`;
+              const dataJson = `out/_next/data/${dataDir}/article/${id}.json`;
+              if (!fs.existsSync(html) || !fs.existsSync(dataJson)) {
+                console.log(`❌ 缺失产物 article/${id}: html=${fs.existsSync(html)} data-json=${fs.existsSync(dataJson)}`);
+                missing++;
+              }
+            }
+            if (missing) process.exit(1);
+            console.log(`✅ ${ids.length} 篇文章全部成功导出：HTML + _next/data JSON 都存在`);
+          '
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./source/out
+          publish_dir: ./out
