@@ -35,7 +35,7 @@ jobs:
           node -e '
             const fs = require("fs");
             const index = JSON.parse(fs.readFileSync("public/data/articles.json", "utf-8"));
-            const idsInIndex = new Set((index.records || index).map(r => String(r.id)));
+            const idsInIndex = new Set((index.rows || index.records || index).map(r => String(r.id)));
             const files = fs.readdirSync("public/data/articles").filter(f => f.endsWith(".json"));
             const idsInFiles = new Set(files.map(f => f.replace(/\.json$/, "")));
             let ok = true;
@@ -103,7 +103,7 @@ jobs:
           node -e '
             const fs = require("fs");
             const index = JSON.parse(fs.readFileSync("public/data/articles.json", "utf-8"));
-            const ids = (index.records || index).map(r => String(r.id));
+            const ids = (index.rows || index.records || index).map(r => String(r.id));
             let missing = 0;
             const dataDir = fs.readdirSync("out/_next/data")[0];
             for (const id of ids) {
