@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import type { Media, OpMusic } from "@/lib/types";
 import { siteConfig } from "./siteConfig";

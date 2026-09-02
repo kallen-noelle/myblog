@@ -1,4 +1,4 @@
-﻿<div align="center">
+<div align="center">
 
 # kallen's place · kallen-noelle
 

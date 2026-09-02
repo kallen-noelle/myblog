@@ -1,4 +1,4 @@
-﻿export const siteConfig = {
+export const siteConfig = {
   /** 站点标题*/
   title: "kallen`s place - 个人技术博客与作品集",
   /** 作者名称*/
