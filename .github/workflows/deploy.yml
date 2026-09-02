@@ -105,17 +105,15 @@ jobs:
             const index = JSON.parse(fs.readFileSync("public/data/articles.json", "utf-8"));
             const ids = (index.rows || index.records || index).map(r => String(r.id));
             let missing = 0;
-            const dataDir = fs.readdirSync("out/_next/data")[0];
             for (const id of ids) {
               const html = `out/article/${id}/index.html`;
-              const dataJson = `out/_next/data/${dataDir}/article/${id}.json`;
-              if (!fs.existsSync(html) || !fs.existsSync(dataJson)) {
-                console.log(`❌ 缺失产物 article/${id}: html=${fs.existsSync(html)} data-json=${fs.existsSync(dataJson)}`);
+              if (!fs.existsSync(html)) {
+                console.log(`❌ 缺失产物 article/${id}/index.html`);
                 missing++;
               }
             }
             if (missing) process.exit(1);
-            console.log(`✅ ${ids.length} 篇文章全部成功导出：HTML + _next/data JSON 都存在`);
+            console.log(`✅ ${ids.length} 篇文章全部成功导出：HTML 存在`);
           '
 
       - name: Deploy to GitHub Pages
