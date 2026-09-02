@@ -5,6 +5,15 @@ import { motion } from "framer-motion";
 import type { ArticleVO } from "@/lib/types";
 
 export default function ArticleCard({ article }: { article: ArticleVO }) {
+  // ==== Data defense: synced articles.json index often omits nested fields ====
+  const tags = Array.isArray(article.tags) ? article.tags : [];
+  const categoryName = article.categoryName || "";
+  const commentCount = typeof article.commentCount === "number" ? article.commentCount : 0;
+  const coverImage = article.coverImage || "";
+  const summary = article.summary || "";
+  const title = article.title || "(untitled)";
+  const isPinned = typeof article.isPinned === "number" ? article.isPinned : 0;
+
   const date = article.createdAt
     ? new Date(article.createdAt).toLocaleDateString("zh-CN", { year: "numeric", month: "long", day: "numeric" })
     : "";
@@ -17,18 +26,18 @@ export default function ArticleCard({ article }: { article: ArticleVO }) {
         className="relative h-full rounded-2xl overflow-hidden bg-gradient-to-br from-white/40 to-white/10 dark:from-slate-800/40 dark:to-slate-800/10 backdrop-blur-md border border-white/40 dark:border-white/10 shadow-lg hover:shadow-2xl transition-shadow duration-300"
       >
         {/* Cover Image */}
-        {article.coverImage && (
+        {coverImage && (
           <div className="relative h-56 overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={article.coverImage}
-              alt={article.title}
+              src={coverImage}
+              alt={title}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
             {/* Pinned Badge */}
-            {article.isPinned === 1 && (
+            {isPinned === 1 && (
               <div className="absolute top-4 left-4">
                 <div className="px-3 py-1.5 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-xs font-bold shadow-lg backdrop-blur-sm">
                   <span className="flex items-center gap-1">
@@ -41,13 +50,14 @@ export default function ArticleCard({ article }: { article: ArticleVO }) {
               </div>
             )}
 
-
             {/* Category Badge */}
-            <div className="absolute bottom-4 left-4">
-              <div className="px-3 py-1 rounded-lg bg-white/90 dark:bg-slate-900/90 backdrop-blur-md text-slate-700 dark:text-slate-200 text-xs font-semibold shadow-md">
-                {article.categoryName}
+            {categoryName && (
+              <div className="absolute bottom-4 left-4">
+                <div className="px-3 py-1 rounded-lg bg-white/90 dark:bg-slate-900/90 backdrop-blur-md text-slate-700 dark:text-slate-200 text-xs font-semibold shadow-md">
+                  {categoryName}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         )}
 
@@ -55,12 +65,12 @@ export default function ArticleCard({ article }: { article: ArticleVO }) {
         <div className="p-6">
           {/* Title */}
           <h3 className="text-xl font-bold text-slate-900 dark:text-white leading-tight mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-2">
-            {article.title}
+            {title}
           </h3>
 
           {/* Summary */}
           <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4 line-clamp-2">
-            {article.summary}
+            {summary}
           </p>
 
           {/* Meta Info */}
@@ -71,20 +81,20 @@ export default function ArticleCard({ article }: { article: ArticleVO }) {
               </svg>
               <span>{date}</span>
             </div>
-            {article.commentCount > 0 && (
+            {commentCount > 0 && (
               <div className="flex items-center gap-1">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                 </svg>
-                <span>{article.commentCount} 评论</span>
+                <span>{commentCount} 评论</span>
               </div>
             )}
           </div>
 
           {/* Tags */}
-          {article.tags.length > 0 && (
+          {tags.length > 0 && (
             <div className="mt-4 flex flex-wrap gap-2">
-              {article.tags.slice(0, 3).map((tag) => (
+              {tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag.id}
                   className="px-2.5 py-1 rounded-full text-xs font-medium bg-indigo-50/80 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-800"

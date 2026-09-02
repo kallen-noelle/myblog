@@ -23,9 +23,9 @@ export default function ProjectCard({ project }: { project: ProjectVO }) {
           <p className="mt-2 text-sm text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2 flex-1">
             {project.summary}
           </p>
-          {project.techs && project.techs.length > 0 && (
+          {(Array.isArray(project.techs) ? project.techs : []).length > 0 && (
             <div className="mt-3 flex flex-wrap gap-1.5">
-              {project.techs.map((tech) => (
+              {(Array.isArray(project.techs) ? project.techs : []).map((tech) => (
                 <span key={tech.id} className="px-2 py-0.5 text-[10px] rounded-full bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 font-medium">
                   {tech.name}
                 </span>

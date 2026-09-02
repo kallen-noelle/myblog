@@ -100,7 +100,7 @@ const PER_PAGE = 30;
 export async function fetchCommits(
   page = 1
 ): Promise<ApiResponse> {
-  const url = `${GITHUB_API}/commits?sha=master&per_page=${PER_PAGE}&page=${page}`;
+  const url = `${GITHUB_API}/commits?sha=main&per_page=${PER_PAGE}&page=${page}`;
   const res = await fetch(url, {
     next: { revalidate: 3600 },
   });

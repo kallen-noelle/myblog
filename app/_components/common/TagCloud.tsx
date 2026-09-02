@@ -21,7 +21,7 @@ export default function TagCloud({ tags, activeId, onSelect }: Props) {
       >
         All
       </button>
-      {tags.map((tag) => (
+      {(Array.isArray(tags) ? tags : []).map((tag) => (
         <button
           key={tag.id}
           onClick={() => onSelect(tag.id)}
