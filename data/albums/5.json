@@ -1,0 +1,30 @@
+[
+  {
+    "albumId": 5,
+    "createTime": "2026-06-04T20:46:26.914053",
+    "deleted": 0,
+    "id": 118,
+    "sortOrder": 0,
+    "updateTime": "2026-06-04T20:46:26.914053",
+    "url": "/data/media/166.jpg"
+  },
+  {
+    "albumId": 5,
+    "createTime": "2026-06-04T20:46:26.88713",
+    "deleted": 0,
+    "id": 117,
+    "sortOrder": 0,
+    "updateTime": "2026-06-04T20:46:26.88713",
+    "url": "/data/media/165.jpg"
+  },
+  {
+    "albumId": 5,
+    "createTime": "2026-06-04T20:46:26.859451",
+    "deleted": 0,
+    "id": 116,
+    "sortOrder": 0,
+    "updateTime": "2026-06-04T20:46:26.859451",
+    "url": "/data/media/164.jpg"
+  }
+
+]
